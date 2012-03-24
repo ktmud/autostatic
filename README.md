@@ -1,8 +1,8 @@
-= AutoStatic =
+# AutoStatic
 
 Automatically serve static files, with version control (etag support), compression and CDN support. This makes it possible to skip all the annoying packaging process when deploying your application.
 
-== Usage ==
+## Usage
 
 ```javascript
 var express = require('express');
