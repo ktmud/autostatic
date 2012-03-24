@@ -1,6 +1,6 @@
 {
   "name": "autostatic",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "homepage": "http://github.com/ktmud/autostatic",
   "description": "Automatically serve static files, with version control, compression and CDN support. This makes it possible to get rid of all the annoying packaging process of deployment.",
   "keywords": [ "express", "packaging", "compression", "minify", "assets management", "cdn"],
