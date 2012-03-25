@@ -10,8 +10,13 @@ var autostatic = require('autostatic');
 
 var app = express.createServer();
 
+var as = autostatic({ root: 'http://img.example.com' });
+
+app.use(as.middleware()); // neccesary if you don't always use `static()` helper to insert file url
+app.use(express.static(__dirname + '/public', conf.static_conf));
+
 app.helpers({
-  static: autostatic({ root: 'http://img.example.com' }).serve,
+  static: as.serve,
 });
 ```
 
