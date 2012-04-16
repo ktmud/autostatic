@@ -1,8 +1,8 @@
 # AutoStatic
 
-Automatically serve static files, with version control (etag support), compression and CDN support. This makes it possible to skip all the annoying packaging process when deploying your application.
+Automatically serve static files, with version control (etag supported), compression and CDN support. This makes it possible to skip all the annoying packaging process when deploying your application.
 
-You may also want to try a (inline static management module)[https://github.com/ktmud/express-istatic].
+You may also want to try a [inline static management module](https://github.com/ktmud/express-istatic).
 
 ## Usage
 
