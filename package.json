@@ -1,6 +1,6 @@
 {
   "name": "autostatic",
-  "version": "0.0.9-2",
+  "version": "0.0.9-3",
   "homepage": "http://github.com/ktmud/autostatic",
   "description": "Automatically serve static files, with version control (etag support), compression and CDN support. This makes it possible to skip all the annoying packaging process when deploying your application.",
   "keywords": [ "express", "packaging", "compression", "minify", "assets", "cdn", "deploy"],
@@ -9,6 +9,7 @@
   "repository": "git@github.com/ktmud/autostatic.git",
   "dependencies": {
     "less": ">= 1.0",
+    "debug": "*",
     "stylus": ">= 0.1",
     "uglify-js": ">= 1.0",
     "uglifycss": ">= 0.0.5"
