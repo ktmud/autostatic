@@ -71,7 +71,8 @@ will output:
 
 The path `/autostatic`  can be configured:
 
-```
+```html
 autostatic.set({
   route: '/serve_assets'
 });
+```
