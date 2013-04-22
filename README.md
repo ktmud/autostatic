@@ -10,15 +10,18 @@ You may also want to try a [inline static management module](https://github.com/
 var express = require('express');
 var autostatic = require('autostatic');
 
-var app = express.createServer();
+var app = express();
 
-var as = autostatic({ root: 'http://img.example.com' });
+var as = autostatic({
+  root: 'http://img.example.com',
+  dir: __dirname + '/public'
+});
 
-app.use(as.middleware()); // neccesary if you don't always use `static()` helper to insert file url
-app.use(express.static(__dirname + '/public', conf.static_conf));
+app.use(as.middleware());
+app.use(express.static(__dirname + '/public'));
 
 app.helpers({
-  static: as.serve,
+  static: as.helper(),
 });
 ```
 In template:
@@ -39,20 +42,36 @@ minified version of this file is ready, minified file with etag as suffix (`/js/
 be served.
 
 You can set up a unique domain for your assets (`img.example.com`), in Nginx or Apache,
-with your public files directory as `root` or `DocumentRoot`.
+with your public files directory as `root` (in Nginx) or `DocumentRoot` (in Apache).
 
-Or, set up an `upload` method to deploy the compressed file to CDN like this:
+Or, set up an `upload` method to deploy the compressed file to CDN:
 
 ```javascript
-
 var as = autostatic({
   root: 'http://img1.xxcdn.com',
   upload: function(path, contents) {
     // your upload method
   }
 });
-
-app.helpers({
-  static: as.serve
-});
 ```
+
+## Concatenating files
+
+You can use autostatic to serve multiple static files.
+
+```html
+<script src="${static('/js/abcd.js', '/js/efgh.js')}"></script>
+```
+
+will output:
+
+```html
+<script src="/autostatic??/js/abcd.js,/js/efgh.js"></script>
+```
+
+The path `/autostatic`  can be configured:
+
+```
+autostatic.set({
+  route: '/serve_assets'
+});
