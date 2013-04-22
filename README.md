@@ -20,7 +20,7 @@ var as = autostatic({
 app.use(as.middleware());
 app.use(express.static(__dirname + '/public'));
 
-app.helpers({
+app.locals({
   static: as.helper(),
 });
 ```
