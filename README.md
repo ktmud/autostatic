@@ -76,3 +76,7 @@ autostatic.set({
   route: '/serve_assets'
 });
 ```
+
+
+[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/ktmud/autostatic/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
+
